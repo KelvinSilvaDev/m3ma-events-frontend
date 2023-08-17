@@ -200,6 +200,7 @@ export default function EventDetails() {
         {/* Banner do Evento */}
         <div className="mb-5 mt-24">
           <img
+            // src={`https://m3ma-events-api.onrender.com/public/${event.image}`}
             src={`http://localhost:3333/public/${event.image}`}
             alt="Banner do Evento"
             className="w-full h-64 object-cover rounded-lg shadow-md"

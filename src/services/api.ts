@@ -2,6 +2,7 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL: "http://localhost:3333", // Modifique para o URL de sua API, se for diferente
+  // baseURL: "https://m3ma-events-api.onrender.com/", // Modifique para o URL de sua API, se for diferente
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",

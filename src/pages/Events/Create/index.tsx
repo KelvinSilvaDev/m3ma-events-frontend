@@ -76,6 +76,7 @@ export default function CreateEvents() {
       // Crie uma nova instância do Axios apenas para esta requisição
       const eventAxios = axios.create({
         baseURL: "http://localhost:3333", // Ajuste conforme necessário
+        // baseURL: "https://m3ma-events-api.onrender.com/", // Ajuste conforme necessário
         withCredentials: true,
         headers: {
           "Content-Type": "multipart/form-data",

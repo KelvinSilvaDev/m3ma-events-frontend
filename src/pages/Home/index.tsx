@@ -78,6 +78,7 @@ export default function Home() {
                   className=" w-46 max-w-[270px] min-w-[270px] rounded-lg overflow-hidden pt-44 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl bg-cover"
                   key={event.id}
                   style={{
+                    // backgroundImage: `url('https://m3ma-events-api.onrender.com/${event.image}')`,
                     backgroundImage: `url('http://localhost:3333/public/${event.image}')`,
                   }}
                 >

@@ -9,12 +9,14 @@ type UserType = {
   name: string;
   email: string;
   role: "ADMIN" | "MANAGER" | "CUSTOMER";
+
   // Adicione outras propriedades do payload do token conforme necessário
 };
 
 type AuthContextType = {
   user: UserType | null;
   setUser: React.Dispatch<React.SetStateAction<UserType | null>>;
+  logout: () => void; // Adicione essa função
 };
 
 interface AuthProviderProps {
@@ -25,6 +27,11 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<UserType | null>(null);
+
+  const logout = () => {
+    localStorage.removeItem("authToken");
+    setUser(null);
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("authToken");
@@ -39,7 +46,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, setUser }}>
+    <AuthContext.Provider value={{ user, setUser, logout }}>
       {children}
     </AuthContext.Provider>
   );
